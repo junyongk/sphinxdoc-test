@@ -1,1 +1,1 @@
-Search.setIndex({envversion:46,filenames:["index","source/includeme"],objects:{},objnames:{},objtypes:{},terms:{content:0,index:0,modul:0,page:0,search:0},titles:["Welcome to sphinxdoc-test&#8217;s documentation!","&lt;no title&gt;"],titleterms:{document:0,indic:0,sphinxdoc:0,tabl:0,test:0,welcom:0}})
+Search.setIndex({envversion:46,filenames:["index"],objects:{},objnames:{},objtypes:{},terms:{content:0,index:0,modul:0,page:0,search:0},titles:["Welcome to sphinxdoc-test&#8217;s documentation!"],titleterms:{document:0,indic:0,sphinxdoc:0,tabl:0,test:0,welcom:0}})
