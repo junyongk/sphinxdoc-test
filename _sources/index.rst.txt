@@ -10,9 +10,14 @@ Welcome to sphinxdoc-test's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   getting_started
    basic
    production
    django
+   api
+   carts
+   modules
+
 
 
 
