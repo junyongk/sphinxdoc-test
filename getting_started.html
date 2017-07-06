@@ -35,7 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="sphinxdoc-test 1.0 documentation" href="index.html"/> 
+    <link rel="top" title="sphinxdoc-test 1.0 documentation" href="index.html"/>
+        <link rel="next" title="프로젝트 기본사항" href="basic.html"/>
+        <link rel="prev" title="Welcome to sphinxdoc-test’s documentation!" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -89,9 +91,24 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-an-array">Create an array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#save-load-an-array">Save/Load an array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#indexing">Indexing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregation">Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#groups">Groups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#group-arrays-in-session">Group arrays in Session</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#graphical-user-interface">Graphical User Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#for-windows-users">For Windows Users</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#compatibility-with-pandas">Compatibility with pandas</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="basic.html">프로젝트 기본사항</a></li>
 <li class="toctree-l1"><a class="reference internal" href="django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carts.html">Carts API</a></li>
 </ul>
 
             
@@ -162,8 +179,8 @@
 <p>To use the LArray library, the first thing to do is to import it</p>
 <div class="section" id="create-an-array">
 <h2>Create an array<a class="headerlink" href="#create-an-array" title="Permalink to this headline">¶</a></h2>
-<p>Working with the LArray library mainly consists of manipulating <a class="reference internal" href="api.html#api-larray"><span class="std std-ref">LArray</span></a> data structures.
-They represent N-dimensional labelled arrays and are composed of data (numpy ndarray), <a class="reference internal" href="api.html#api-axis"><span class="std std-ref">axes</span></a>
+<p>Working with the LArray library mainly consists of manipulating <span class="xref std std-ref">LArray</span> data structures.
+They represent N-dimensional labelled arrays and are composed of data (numpy ndarray), <span class="xref std std-ref">axes</span>
 and optionally a title. An axis contains a list of labels and may have a name (if not given, the axis is anonymous).</p>
 <p>You can create an array from scratch by supplying data, axes and optionally a title:</p>
 <div class="admonition note">
@@ -182,7 +199,7 @@ Strings containing only integers are interpreted as such.</p>
 <p class="last">In this getting started section we will use the first, more verbose, syntax which
 works in all cases and provide the equivalent using the shorter syntax in comments.
 More examples can be found in the <span class="xref std std-ref">tutorial</span> and the
-<a class="reference internal" href="api.html#start-api"><span class="std std-ref">API reference</span></a> section.</p>
+<span class="xref std std-ref">API reference</span> section.</p>
 </div>
 <p>Here are the key properties for an array:</p>
 <p>Arrays can be generated through dedicated functions:</p>
@@ -215,7 +232,7 @@ More examples can be found in the <span class="xref std std-ref">tutorial</span>
 two last dimensions are separated by a .</p>
 </div>
 <p>To load a saved array, call the function <code class="xref py py-meth docutils literal"><span class="pre">read_csv()</span></code>:</p>
-<p>Other input/output functions are described in the <a class="reference internal" href="api.html#api-io"><span class="std std-ref">corresponding section</span></a>
+<p>Other input/output functions are described in the <span class="xref std std-ref">corresponding section</span>
 of the API documentation.</p>
 </div>
 <div class="section" id="indexing">
@@ -243,11 +260,11 @@ When not given, start is the first label of an axis, stop the last one.</p>
 For example, to calculate the sum along an axis, write:</p>
 <p>To aggregate along all axes except one, you simply have to append <cite>_by</cite>
 to the aggregation method you want to use:</p>
-<p>See <a class="reference internal" href="api.html#la-agg"><span class="std std-ref">here</span></a> to get the list of all available aggregation methods.</p>
+<p>See <span class="xref std std-ref">here</span> to get the list of all available aggregation methods.</p>
 </div>
 <div class="section" id="groups">
 <h2>Groups<a class="headerlink" href="#groups" title="Permalink to this headline">¶</a></h2>
-<p>A <a class="reference internal" href="api.html#api-group"><span class="std std-ref">Group</span></a> represents a subset of labels or positions of an axis:</p>
+<p>A <span class="xref std std-ref">Group</span> represents a subset of labels or positions of an axis:</p>
 <p>They can be used in selections:</p>
 <p>or aggregations:</p>
 <p>In the case of aggregations, it is often useful to attach them a name
@@ -255,7 +272,7 @@ using the <code class="docutils literal"><span class="pre">&gt;&gt;</span></code
 </div>
 <div class="section" id="group-arrays-in-session">
 <h2>Group arrays in Session<a class="headerlink" href="#group-arrays-in-session" title="Permalink to this headline">¶</a></h2>
-<p>Arrays may be grouped in <a class="reference internal" href="api.html#api-session"><span class="std std-ref">Session</span></a> objects.
+<p>Arrays may be grouped in <span class="xref std std-ref">Session</span> objects.
 A session is an ordered dict-like container of LArray objects with special I/O methods.
 To create a session, you need to pass a list of pairs (array_name, array):</p>
 <div class="admonition warning">
@@ -310,6 +327,15 @@ No need to start by <cite>from larray import *</cite>.</p>
            </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basic.html" class="btn btn-neutral float-right" title="프로젝트 기본사항" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to sphinxdoc-test’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
