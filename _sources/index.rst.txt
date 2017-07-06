@@ -14,9 +14,7 @@ Welcome to sphinxdoc-test's documentation!
    basic
    production
    django
-   api
    carts
-   modules
 
 
 
