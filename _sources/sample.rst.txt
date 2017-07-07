@@ -1,4 +1,4 @@
-Carts API
+sample
 =========
 
 These endpoints will allow you to easily manage cart and cart items. Base URI is `/api/v1/carts/`.
