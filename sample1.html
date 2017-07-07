@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Sample1 &mdash; sphinxdoc-test 1.0 documentation</title>
+  <title>Sample 1 &mdash; sphinxdoc-test 1.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="sphinxdoc-test 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Sample2" href="sample2.html"/>
+        <link rel="next" title="Sample 2" href="sample2.html"/>
         <link rel="prev" title="Welcome to sphinxdoc-test’s documentation!" href="index.html"/> 
 
   
@@ -92,24 +92,25 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Sample1</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cart-api-response-structure">Cart API response structure</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemplary-response">Exemplary Response</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sample 1</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">목차 구조- 상위</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">목차 구조 - 하위 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">목차 구조 - 하위 2</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#updating-a-cart-item">Updating a Cart Item</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#for-windows-users">For Windows Users</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">서비스 권한</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">강조, 경고, 팁 메시지</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">구조체 설명</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bash">샘플 코드 - bash</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#text">샘플 코드 - text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json">샘플 코드 - json</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">샘플 코드 - ::</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">글머리 기호 유형</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">글씨 유형</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">그림</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">링크</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">프로젝트 기술 스택</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">기여자 목록</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sample2.html">Sample2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample2.html">Sample 2</a></li>
 </ul>
 
             
@@ -154,7 +155,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Sample1</li>
+      <li>Sample 1</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,26 +176,36 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="sample1">
-<h1>Sample1<a class="headerlink" href="#sample1" title="Permalink to this headline">¶</a></h1>
-<p>These endpoints will allow you to easily manage cart and cart items. Base URI is <cite>/api/v1/carts/</cite>.</p>
+  <div class="section" id="sample-1">
+<h1>Sample 1<a class="headerlink" href="#sample-1" title="Permalink to this headline">¶</a></h1>
+<p>내용</p>
+<div class="section" id="id1">
+<h2>목차 구조- 상위<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>목차 구조 - 하위 1<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3>목차 구조 - 하위 2<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>강조, 경고, 팁 메시지<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>Remember that a <strong>Cart</strong> in Sylius is an <strong>Order</strong> in the state <code class="docutils literal"><span class="pre">cart</span></code>.</p>
-<p class="last">If you don’t understand the difference between Cart and Order concepts in Sylius yet, please read <span class="xref std std-doc">this article</span> carefully.</p>
+<p class="last">내용</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Remember, that it doesn’t replicate the environment of shop usage.</p>
+<p class="last">내용</p>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p class="last">In Sylius the prices are stored as an integers (<code class="docutils literal"><span class="pre">1059</span></code> represents <code class="docutils literal"><span class="pre">10.59$</span></code>).
-So in order to present a proper amount to the end user, you should divide price by 100 by default.</p>
+<p class="last">내용</p>
 </div>
-<div class="section" id="cart-api-response-structure">
-<h2>Cart API response structure<a class="headerlink" href="#cart-api-response-structure" title="Permalink to this headline">¶</a></h2>
-<p>If you request a cart via API, you will receive an object with the following fields:</p>
+</div>
+<div class="section" id="id5">
+<h2>구조체 설명<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>구조체 필드:</p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="18%" />
@@ -207,45 +218,38 @@ So in order to present a proper amount to the end user, you should divide price 
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>id</td>
-<td>Id of the cart</td>
+<td>Id</td>
 </tr>
 <tr class="row-odd"><td>items</td>
-<td>List of items in the cart</td>
+<td>items</td>
 </tr>
 </tbody>
 </table>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<p>To create a new cart for the <code class="docutils literal"><span class="pre">shop&#64;example.com</span></code> user in the <code class="docutils literal"><span class="pre">US_WEB</span></code> channel with the <code class="docutils literal"><span class="pre">en_US</span></code> locale use the below method:</p>
+</div>
+<div class="section" id="bash">
+<h2>샘플 코드 - bash<a class="headerlink" href="#bash" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl http://demo.sylius.org/api/v1/carts/ <span class="se">\</span>
     -H <span class="s2">&quot;Authorization: Bearer SampleToken&quot;</span> <span class="se">\</span>
-    -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
     -X POST <span class="se">\</span>
     --data <span class="s1">&#39;</span>
 <span class="s1">        {</span>
 <span class="s1">            &quot;customer&quot;: &quot;shop@example.com&quot;,</span>
 <span class="s1">            &quot;channel&quot;: &quot;US_WEB&quot;,</span>
-<span class="s1">            &quot;localeCode&quot;: &quot;en_US&quot;</span>
 <span class="s1">        }</span>
 <span class="s1">    &#39;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="exemplary-response">
-<h3>Exemplary Response<a class="headerlink" href="#exemplary-response" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="text">
+<h2>샘플 코드 - text<a class="headerlink" href="#text" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-text"><div class="highlight"><pre><span></span>STATUS: 201 Created
 </pre></div>
 </div>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl http://demo.sylius.org/api/v1/carts/21 <span class="se">\</span>
-    -H <span class="s2">&quot;Authorization: Bearer SampleToken&quot;</span> <span class="se">\</span>
-    -H <span class="s2">&quot;Accept: application/json&quot;</span>
-</pre></div>
 </div>
+<div class="section" id="json">
+<h2>샘플 코드 - json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-json"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="mi">21</span><span class="p">,</span>
-    <span class="nt">&quot;items&quot;</span><span class="p">:[</span>
-
-    <span class="p">],</span>
     <span class="nt">&quot;itemsTotal&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
     <span class="nt">&quot;adjustments&quot;</span><span class="p">:[</span>
 
@@ -265,79 +269,68 @@ So in order to present a proper amount to the end user, you should divide price 
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">},</span>
-    <span class="nt">&quot;channel&quot;</span><span class="p">:{</span>
-        <span class="nt">&quot;code&quot;</span><span class="p">:</span><span class="s2">&quot;US_WEB&quot;</span><span class="p">,</span>
-        <span class="nt">&quot;_links&quot;</span><span class="p">:{</span>
-            <span class="nt">&quot;self&quot;</span><span class="p">:{</span>
-                <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;\/api\/v1\/channels\/US_WEB&quot;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">},</span>
     <span class="nt">&quot;checkoutState&quot;</span><span class="p">:</span><span class="s2">&quot;cart&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Content of ‘arr_3D.csv’ file is</p>
+</div>
+<div class="section" id="id6">
+<h2>샘플 코드 - ::<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span>\<span class="n">c</span><span class="p">,</span><span class="n">c0</span><span class="p">,</span><span class="n">c1</span>
 <span class="n">a0</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
 <span class="n">a0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="updating-a-cart-item">
-<h2>Updating a Cart Item<a class="headerlink" href="#updating-a-cart-item" title="Permalink to this headline">¶</a></h2>
-<p>To change the quantity of a cart item you will need to call the <code class="docutils literal"><span class="pre">/api/v1/carts/{cartId}/items/{cartItemId}</span></code> endpoint with the <code class="docutils literal"><span class="pre">PUT</span></code> or <code class="docutils literal"><span class="pre">PATCH</span></code> method.</p>
-<p>Arrays can be generated through dedicated functions:</p>
+<div class="section" id="id7">
+<h2>글머리 기호 유형<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first"><code class="xref py py-func docutils literal"><span class="pre">a()</span></code> : a</p>
+</li>
+<li><p class="first"><code class="xref py py-func docutils literal"><span class="pre">b()</span></code> : b</p>
 <ul class="simple">
-<li><code class="xref py py-func docutils literal"><span class="pre">zeros()</span></code> : fills an array with 0</li>
-<li><code class="xref py py-func docutils literal"><span class="pre">ones()</span></code> : fills an array with 1</li>
+<li>내용</li>
+<li>내용</li>
 </ul>
-<p>To open the user interface in edit mode, call <code class="xref py py-func docutils literal"><span class="pre">edit()</span></code> instead.</p>
-<img alt="_images/editor.png" class="align-center" src="_images/editor.png" />
-<p>Once open, you can save and load any session using the <cite>File</cite> menu.</p>
-<p>Finally, you can also visually compare two arrays or sessions using the <code class="xref py py-func docutils literal"><span class="pre">compare()</span></code> function.</p>
-<div class="section" id="for-windows-users">
-<h3>For Windows Users<a class="headerlink" href="#for-windows-users" title="Permalink to this headline">¶</a></h3>
-<p>Installing the <code class="docutils literal"><span class="pre">larray-editor</span></code> package on Windows will create a <code class="docutils literal"><span class="pre">LArray</span></code> menu in the
-Windows Start Menu. This menu contains:</p>
 <blockquote>
 <div><ul class="simple">
-<li>a shortcut to open the documentation of the last stable version of the library</li>
-<li>a shortcut to open the graphical interface in edit mode.</li>
+<li>내용</li>
+<li>내용</li>
 </ul>
 </div></blockquote>
-<img alt="_images/menu_windows.png" class="align-center" src="_images/menu_windows.png" />
-<div class="section" id="id1">
-<h4>서비스 권한<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p><strong>Manager</strong> 앱이 필요한 가장 큰 이유는 <strong>권한 관리</strong> 때문입니다.
-기본적으로 <strong>KAIST USC</strong> 프로젝트는 각 서비스에 대한 권한을 아래 7가지 중 하나로 나타냅니다. (<code class="xref py py-mod docutils literal"><span class="pre">apps.manager.constants</span></code> 에 위치)</p>
+</li>
+</ul>
 <ul class="simple">
-<li>권한없음</li>
-<li>접근권한</li>
-<li>이름 (<code class="xref py py-attr docutils literal"><span class="pre">ku_kname</span></code>)</li>
-<li>고유번호(UID) (<code class="xref py py-attr docutils literal"><span class="pre">kaist_uid</span></code>)</li>
+<li>내용</li>
+<li>내용</li>
+<li>내용</li>
 </ul>
 </div>
+<div class="section" id="id8">
+<h2>글씨 유형<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>내용 <cite>내용</cite> <code class="docutils literal"><span class="pre">내용</span></code></p>
+<ul class="simple">
+<li><strong>내용</strong> &lt;<a class="reference external" href="mailto:test&#37;&#52;&#48;navercorp&#46;com">test<span>&#64;</span>navercorp<span>&#46;</span>com</a>&gt;</li>
+</ul>
+<p><code class="xref py py-func docutils literal"><span class="pre">compare()</span></code></p>
+<p><code class="xref py py-mod docutils literal"><span class="pre">apps.manager.constants</span></code></p>
+<p><code class="xref py py-attr docutils literal"><span class="pre">내용</span></code></p>
 </div>
+<div class="section" id="id9">
+<h2>그림<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/editor.png" class="align-center" src="_images/editor.png" />
+<img alt="_images/menu_windows.png" class="align-center" src="_images/menu_windows.png" />
 </div>
-<div class="section" id="id2">
-<h2>프로젝트 기술 스택<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p><strong>배포환경</strong></p>
+<div class="section" id="id10">
+<h2>링크<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p><strong>링크 예제 1</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://www.docker.com/">Docker</a></li>
 <li><a class="reference external" href="https://www.mysql.com/">MySQL</a> 5.7</li>
 </ul>
-<p><strong>기타</strong></p>
+<p><strong>링크 예제 2</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://npmjs.com/">npm</a>, <a class="reference external" href="http://gulpjs.com/">Gulp</a></li>
-</ul>
-</div>
-<div class="section" id="id3">
-<h2>기여자 목록<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><strong>박항</strong> &lt;<a class="reference external" href="mailto:hangpark&#37;&#52;&#48;kaist&#46;ac&#46;kr">hangpark<span>&#64;</span>kaist<span>&#46;</span>ac<span>&#46;</span>kr</a>&gt; - 프로그래밍, 문서화</li>
-<li><strong>권용석</strong> - 웹디자인</li>
 </ul>
 </div>
 </div>
@@ -352,7 +345,7 @@ Windows Start Menu. This menu contains:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sample2.html" class="btn btn-neutral float-right" title="Sample2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sample2.html" class="btn btn-neutral float-right" title="Sample 2" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral" title="Welcome to sphinxdoc-test’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
