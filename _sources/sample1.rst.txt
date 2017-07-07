@@ -1,0 +1,178 @@
+Sample1
+=========
+
+These endpoints will allow you to easily manage cart and cart items. Base URI is `/api/v1/carts/`.
+
+.. note::
+
+    Remember that a **Cart** in Sylius is an **Order** in the state ``cart``.
+
+    If you don't understand the difference between Cart and Order concepts in Sylius yet, please read :doc:`this article </book/orders/orders>` carefully.
+
+.. warning::
+
+    Remember, that it doesn't replicate the environment of shop usage.
+
+.. tip::
+
+    In Sylius the prices are stored as an integers (``1059`` represents ``10.59$``).
+    So in order to present a proper amount to the end user, you should divide price by 100 by default.
+
+Cart API response structure
+----------------------------
+
+If you request a cart via API, you will receive an object with the following fields:
+
++-------------------+---------------------------------------------------------------------------------------+
+| Field             | Description                                                                           |
++===================+=======================================================================================+
+| id                | Id of the cart                                                                        |
++-------------------+---------------------------------------------------------------------------------------+
+| items             | List of items in the cart                                                             |
++-------------------+---------------------------------------------------------------------------------------+
+
+Example
+^^^^^^^
+
+To create a new cart for the ``shop@example.com`` user in the ``US_WEB`` channel with the ``en_US`` locale use the below method:
+
+.. code-block:: bash
+
+    $ curl http://demo.sylius.org/api/v1/carts/ \
+        -H "Authorization: Bearer SampleToken" \
+        -H "Content-Type: application/json" \
+        -X POST \
+        --data '
+            {
+                "customer": "shop@example.com",
+                "channel": "US_WEB",
+                "localeCode": "en_US"
+            }
+        '
+
+Exemplary Response
+^^^^^^^^^^^^^^^^^^
+
+.. code-block:: text
+
+    STATUS: 201 Created
+
+.. code-block:: bash
+
+    $ curl http://demo.sylius.org/api/v1/carts/21 \
+        -H "Authorization: Bearer SampleToken" \
+        -H "Accept: application/json"
+
+.. code-block:: json
+
+    {
+        "id":21,
+        "items":[
+
+        ],
+        "itemsTotal":0,
+        "adjustments":[
+
+        ],
+        "total":0,
+        "customer":{
+            "id":1,
+            "lastName":"Doe",
+            "user":{
+                "id":1,
+                "username":"shop@example.com",
+                "usernameCanonical":"shop@example.com"
+            },
+            "_links":{
+                "self":{
+                    "href":"\/api\/v1\/customers\/1"
+                }
+            }
+        },
+        "channel":{
+            "code":"US_WEB",
+            "_links":{
+                "self":{
+                    "href":"\/api\/v1\/channels\/US_WEB"
+                }
+            }
+        },
+        "checkoutState":"cart"
+    }
+
+Content of 'arr_3D.csv' file is ::
+
+  a,b\c,c0,c1
+  a0,b0,0,1
+  a0,b1,2,3
+
+Updating a Cart Item
+--------------------
+
+To change the quantity of a cart item you will need to call the ``/api/v1/carts/{cartId}/items/{cartItemId}`` endpoint with the ``PUT`` or ``PATCH`` method.
+
+Arrays can be generated through dedicated functions:
+
+* :py:func:`zeros` : fills an array with 0
+* :py:func:`ones` : fills an array with 1
+
+
+To open the user interface in edit mode, call :py:func:`edit` instead.
+
+.. image:: _static/editor.png
+    :align: center
+
+Once open, you can save and load any session using the `File` menu.
+
+Finally, you can also visually compare two arrays or sessions using the :py:func:`compare` function.
+
+For Windows Users
+^^^^^^^^^^^^^^^^^
+
+Installing the ``larray-editor`` package on Windows will create a ``LArray`` menu in the
+Windows Start Menu. This menu contains:
+
+  * a shortcut to open the documentation of the last stable version of the library
+  * a shortcut to open the graphical interface in edit mode.
+
+.. image:: _static/menu_windows.png
+    :align: center
+
+
+서비스 권한
+~~~~~~~~~~~
+
+**Manager** 앱이 필요한 가장 큰 이유는 **권한 관리** 때문입니다.
+기본적으로 **KAIST USC** 프로젝트는 각 서비스에 대한 권한을 아래 7가지 중 하나로 나타냅니다. (:mod:`apps.manager.constants` 에 위치)
+
+- 권한없음
+- 접근권한
+
+
+- 이름 (:attr:`ku_kname`)
+- 고유번호(UID) (:attr:`kaist_uid`)
+
+
+프로젝트 기술 스택
+-----------------------------------------------
+
+**배포환경**
+
+- Docker_
+- MySQL_ 5.7
+
+**기타**
+
+- npm_, Gulp_
+
+
+기여자 목록
+-----------------------------------------------
+
+- **박항** <hangpark@kaist.ac.kr> - 프로그래밍, 문서화
+- **권용석** - 웹디자인
+
+.. _Docker: https://www.docker.com/
+.. _MySQL: https://www.mysql.com/
+.. _npm: https://npmjs.com/
+.. _Gulp: http://gulpjs.com/

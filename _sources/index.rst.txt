@@ -10,20 +10,5 @@ Welcome to sphinxdoc-test's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   getting_started
-   basic
-   production
-   django
-   carts
-   sample
-
-.. automodule:: atom
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   sample1
+   sample2
