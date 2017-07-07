@@ -17,6 +17,7 @@ Welcome to sphinxdoc-test's documentation!
    carts
    ktbs_api
 
+.. automodule:: atom
 
 
 

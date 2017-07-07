@@ -1,0 +1,473 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Carts API &mdash; sphinxdoc-test 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="sphinxdoc-test 1.0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> sphinxdoc-test
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic.html">프로젝트 기본사항</a></li>
+<li class="toctree-l1"><a class="reference internal" href="django.html">Django</a></li>
+<li class="toctree-l1"><a class="reference internal" href="carts.html">Carts API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ktbs_api.html">KTBS API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">sphinxdoc-test</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Carts API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/junyongk/sphinxdoc-test/blob/gh-pages/sample.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="carts-api">
+<h1>Carts API<a class="headerlink" href="#carts-api" title="Permalink to this headline">¶</a></h1>
+<p>These endpoints will allow you to easily manage cart and cart items. Base URI is <cite>/api/v1/carts/</cite>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Remember that a <strong>Cart</strong> in Sylius is an <strong>Order</strong> in the state <code class="docutils literal"><span class="pre">cart</span></code>.</p>
+<p class="last">If you don’t understand the difference between Cart and Order concepts in Sylius yet, please read <span class="xref std std-doc">this article</span> carefully.</p>
+</div>
+<div class="section" id="cart-api-response-structure">
+<h2>Cart API response structure<a class="headerlink" href="#cart-api-response-structure" title="Permalink to this headline">¶</a></h2>
+<p>If you request a cart via API, you will receive an object with the following fields:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>Id of the cart</td>
+</tr>
+<tr class="row-odd"><td>items</td>
+<td>List of items in the cart</td>
+</tr>
+<tr class="row-even"><td>itemsTotal</td>
+<td>Sum of all items prices</td>
+</tr>
+<tr class="row-odd"><td>adjustments</td>
+<td>List of adjustments related to the cart</td>
+</tr>
+<tr class="row-even"><td>adjustmentsTotal</td>
+<td>Sum of all cart adjustments values</td>
+</tr>
+<tr class="row-odd"><td>total</td>
+<td>Sum of items total and adjustments total</td>
+</tr>
+<tr class="row-even"><td>customer</td>
+<td><span class="xref std std-doc">The customer object serialized with the default data</span> for cart</td>
+</tr>
+<tr class="row-odd"><td>channel</td>
+<td><span class="xref std std-doc">The channel object serialized with the default data</span></td>
+</tr>
+<tr class="row-even"><td>currencyCode</td>
+<td>Currency of the cart</td>
+</tr>
+<tr class="row-odd"><td>localeCode</td>
+<td>Locale of the cart</td>
+</tr>
+<tr class="row-even"><td>checkoutState</td>
+<td>State of the checkout process of the cart</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>To create a new cart for the <code class="docutils literal"><span class="pre">shop&#64;example.com</span></code> user in the <code class="docutils literal"><span class="pre">US_WEB</span></code> channel with the <code class="docutils literal"><span class="pre">en_US</span></code> locale use the below method:</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Remember, that it doesn’t replicate the environment of shop usage. It is more like an admin part of cart creation, which will allow you to manage
+the cart from the admin perspective. ShopAPI is still an experimental concept.</p>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ curl http://demo.sylius.org/api/v1/carts/ <span class="se">\</span>
+    -H <span class="s2">&quot;Authorization: Bearer SampleToken&quot;</span> <span class="se">\</span>
+    -H <span class="s2">&quot;Content-Type: application/json&quot;</span> <span class="se">\</span>
+    -X POST <span class="se">\</span>
+    --data <span class="s1">&#39;</span>
+<span class="s1">        {</span>
+<span class="s1">            &quot;customer&quot;: &quot;shop@example.com&quot;,</span>
+<span class="s1">            &quot;channel&quot;: &quot;US_WEB&quot;,</span>
+<span class="s1">            &quot;localeCode&quot;: &quot;en_US&quot;</span>
+<span class="s1">        }</span>
+<span class="s1">    &#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exemplary-response">
+<h3>Exemplary Response<a class="headerlink" href="#exemplary-response" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-text"><div class="highlight"><pre><span></span>STATUS: 201 Created
+</pre></div>
+</div>
+<div class="highlight-json"><div class="highlight"><pre><span></span>{
+    &quot;id&quot;:21,
+    &quot;items&quot;:[
+
+    ],
+    &quot;itemsTotal&quot;:0,
+    &quot;adjustments&quot;:[
+
+    ],
+    &quot;adjustmentsTotal&quot;:0,
+    &quot;total&quot;:0,
+    &quot;customer&quot;:{
+        &quot;id&quot;:1,
+        &quot;email&quot;:&quot;shop@example.com&quot;,
+        &quot;firstName&quot;:&quot;John&quot;,
+        &quot;lastName&quot;:&quot;Doe&quot;,
+        &quot;user&quot;:{
+            &quot;id&quot;:1,
+            &quot;username&quot;:&quot;shop@example.com&quot;,
+            &quot;usernameCanonical&quot;:&quot;shop@example.com&quot;
+        },
+        &quot;_links&quot;:{
+            &quot;self&quot;:{
+                &quot;href&quot;:&quot;\/api\/v1\/customers\/1&quot;
+            }
+        }
+    },
+    &quot;channel&quot;:{
+        &quot;code&quot;:&quot;US_WEB&quot;,
+        &quot;_links&quot;:{
+            &quot;self&quot;:{
+                &quot;href&quot;:&quot;\/api\/v1\/channels\/US_WEB&quot;
+            }
+        }
+    },
+    &quot;currencyCode&quot;:&quot;USD&quot;,z
+    &quot;localeCode&quot;:&quot;en_US&quot;,
+    &quot;checkoutState&quot;:&quot;cart&quot;
+}
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">In Sylius the prices are stored as an integers (<code class="docutils literal"><span class="pre">1059</span></code> represents <code class="docutils literal"><span class="pre">10.59$</span></code>).
+So in order to present a proper amount to the end user, you should divide price by 100 by default.</p>
+</div>
+</div>
+</div>
+<div class="section" id="updating-a-cart-item">
+<h2>Updating a Cart Item<a class="headerlink" href="#updating-a-cart-item" title="Permalink to this headline">¶</a></h2>
+<p>To change the quantity of a cart item you will need to call the <code class="docutils literal"><span class="pre">/api/v1/carts/{cartId}/items/{cartItemId}</span></code> endpoint with the <code class="docutils literal"><span class="pre">PUT</span></code> or <code class="docutils literal"><span class="pre">PATCH</span></code> method.</p>
+<p>Arrays can be generated through dedicated functions:</p>
+<ul class="simple">
+<li><code class="xref py py-func docutils literal"><span class="pre">zeros()</span></code> : fills an array with 0</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">ones()</span></code> : fills an array with 1</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">full()</span></code> : fills an array with a given</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">eye()</span></code> : identity matrix</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">ndrange()</span></code> : fills an array with increasing numbers (mostly for testing)</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">ndtest()</span></code> : same as ndrange but with axes generated automatically (for testing)</li>
+<li><code class="xref py py-func docutils literal"><span class="pre">sequence()</span></code> : creates an array by sequentially applying modifications to the array along axis.</li>
+</ul>
+<p>Content of ‘arr_3D.csv’ file is</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">b</span>\<span class="n">c</span><span class="p">,</span><span class="n">c0</span><span class="p">,</span><span class="n">c1</span>
+<span class="n">a0</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
+<span class="n">a0</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+<span class="n">a1</span><span class="p">,</span><span class="n">b0</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span>
+<span class="n">a1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span>
+</pre></div>
+</div>
+<p>To open the user interface in edit mode, call <code class="xref py py-func docutils literal"><span class="pre">edit()</span></code> instead.</p>
+<img alt="_images/editor.png" class="align-center" src="_images/editor.png" />
+<p>Once open, you can save and load any session using the <cite>File</cite> menu.</p>
+<p>Finally, you can also visually compare two arrays or sessions using the <code class="xref py py-func docutils literal"><span class="pre">compare()</span></code> function.</p>
+<img alt="_images/compare.png" class="align-center" src="_images/compare.png" />
+<p>In case of two arrays, they must have compatible axes.</p>
+<div class="section" id="for-windows-users">
+<h3>For Windows Users<a class="headerlink" href="#for-windows-users" title="Permalink to this headline">¶</a></h3>
+<p>Installing the <code class="docutils literal"><span class="pre">larray-editor</span></code> package on Windows will create a <code class="docutils literal"><span class="pre">LArray</span></code> menu in the
+Windows Start Menu. This menu contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li>a shortcut to open the documentation of the last stable version of the library</li>
+<li>a shortcut to open the graphical interface in edit mode.</li>
+<li>a shortcut to update <cite>larrayenv</cite>.</li>
+</ul>
+</div></blockquote>
+<img alt="_images/menu_windows.png" class="align-center" src="_images/menu_windows.png" />
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="k">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">Category</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="s2">&quot;카테고리명&quot;</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">unique</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python3"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.utils.translation</span> <span class="k">import</span> <span class="n">ugettext_lazy</span> <span class="k">as</span> <span class="n">_</span>
+
+<span class="kn">from</span> <span class="nn">apps.manager</span> <span class="k">import</span> <span class="n">Custom404</span>
+
+<span class="k">raise</span> <span class="n">Custom404</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;존재하지 않는 게시글입니다.&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="section" id="id1">
+<h4>서비스 권한<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p><strong>Manager</strong> 앱이 필요한 가장 큰 이유는 <strong>권한 관리</strong> 때문입니다.
+기본적으로 <strong>KAIST USC</strong> 프로젝트는 각 서비스에 대한 권한을 아래 7가지 중 하나로 나타냅니다. (<code class="xref py py-mod docutils literal"><span class="pre">apps.manager.constants</span></code> 에 위치)</p>
+<ul class="simple">
+<li>권한없음</li>
+<li>접근권한</li>
+<li>읽기권한</li>
+<li>댓글권한</li>
+<li>쓰기권한</li>
+<li>수정권한</li>
+<li>삭제권한</li>
+<li>이름 (<code class="xref py py-attr docutils literal"><span class="pre">ku_kname</span></code>)</li>
+<li>고유번호(UID) (<code class="xref py py-attr docutils literal"><span class="pre">kaist_uid</span></code>)</li>
+<li>학위과정 (<code class="xref py py-attr docutils literal"><span class="pre">ku_acad_prog</span></code>)</li>
+<li>학번 (<code class="xref py py-attr docutils literal"><span class="pre">ku_std_no</span></code>)</li>
+<li>학적상태 (<code class="xref py py-attr docutils literal"><span class="pre">ku_psft_user_status_kor</span></code>)</li>
+<li>생년월일 (<code class="xref py py-attr docutils literal"><span class="pre">ku_born_date</span></code>)</li>
+<li>성별 (<code class="xref py py-attr docutils literal"><span class="pre">ku_sex</span></code>)</li>
+<li>학과 (<code class="xref py py-attr docutils literal"><span class="pre">ou</span></code>)</li>
+<li>메일주소 (<code class="xref py py-attr docutils literal"><span class="pre">mail</span></code>)</li>
+<li>전화번호 (<code class="xref py py-attr docutils literal"><span class="pre">mobile</span></code>)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>프로젝트 기술 스택<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><strong>배포환경</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.docker.com/">Docker</a></li>
+<li><a class="reference external" href="https://www.mysql.com/">Ubuntu</a> 16.04</li>
+<li><a class="reference external" href="https://www.mysql.com/">MySQL</a> 5.7</li>
+<li><a class="reference external" href="https://www.nginx.com/resources/wiki/">Nginx</a></li>
+</ul>
+<p><strong>백엔드</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/">Python</a> 3.6</li>
+<li><a class="reference external" href="https://uwsgi-docs.readthedocs.io/en/latest/">uWSGI</a> 2.0</li>
+<li><a class="reference external" href="https://djangoproject.com/">Django</a> 1.10</li>
+</ul>
+<p><strong>프론트엔드</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="http://jinja.pocoo.org/docs/2.9/">Jinja</a> 2.9</li>
+<li><a class="reference external" href="https://jquery.com/">jQuery</a> 3.1</li>
+<li><a class="reference external" href="https://github.com/twbs/bootstrap-sass/">Bootstrap for Sass</a> 3.3</li>
+<li><a class="reference external" href="http://fontawesome.io/">Font Awesome</a> 4.7</li>
+</ul>
+<p><strong>기타</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://npmjs.com/">npm</a>, <a class="reference external" href="http://gulpjs.com/">Gulp</a>, <a class="reference external" href="https://bower.io/">Bower</a>, <a class="reference external" href="http://www.sphinx-doc.org/en/stable/">Sphinx</a></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>기여자 목록<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><strong>박항</strong> &lt;<a class="reference external" href="mailto:hangpark&#37;&#52;&#48;kaist&#46;ac&#46;kr">hangpark<span>&#64;</span>kaist<span>&#46;</span>ac<span>&#46;</span>kr</a>&gt; - 프로그래밍, 문서화</li>
+<li><strong>박병훈</strong> - 웹디자인</li>
+<li><strong>권용석</strong> - 웹디자인</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, junyong-kang.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
