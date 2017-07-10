@@ -10,5 +10,5 @@ Welcome to sphinxdoc-test's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   sample1
    sample2
+   sample1
